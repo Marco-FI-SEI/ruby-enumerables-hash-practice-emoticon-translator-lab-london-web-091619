@@ -2,16 +2,13 @@ require "yaml"
 
 def load_library(file_path)
   emoji_sheet = YAML.load_file(file_path)
-  # japanese_emoticons = []
-  # western_emoticons = []
-  # emoji_meanings = []
-  # emojis.each do |key, value|
-  #   western_emoticons << value.first
-  #   japanese_emoticons << value.last
-  #   emoji_meanings << key
-  # end
-  emoji_sheet.each_with_object({}) do |emoji_info, ruby each with 
-  hash = {"get_emoticon" => {}, "get_meaning" => {}}
+  japanese_meaning = {}
+  western_to_japanese = {}
+  emoji_sheet.each do |meaning, emojis|
+    japanese_meaning[emojis.last] = meaning
+    western_to_japanese[emojis.first] = emojis.last
+  end
+  hash = {"get_emoticon" => western_to_japanese, "get_meaning" => japanese_meaning}
 end
 
 def get_japanese_emoticon
@@ -40,3 +37,12 @@ end
 #   "surprised"=>[":o", "o_O"], 
 #   "wink"=>[";)", "(^_-)"]
 # }
+
+  # japanese_emoticons = []
+  # western_emoticons = []
+  # emoji_meanings = []
+  # emojis.each do |key, value|
+  #   western_emoticons << value.first
+  #   japanese_emoticons << value.last
+  #   emoji_meanings << key
+  # end
