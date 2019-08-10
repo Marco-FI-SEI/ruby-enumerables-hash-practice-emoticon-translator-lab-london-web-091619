@@ -8,7 +8,7 @@ def load_library(file_path)
     western_emoticons << value.first
     japanese_emoticons << value.last
   end
-  hash = {"get_emoticon"=>{western_emoticons}, "get_meaning"=>{japanese_emoticons}}
+  hash = {"get_emoticon" => western_emoticons, "get_meaning" => japanese_emoticons}
 end
 
 def get_japanese_emoticon
