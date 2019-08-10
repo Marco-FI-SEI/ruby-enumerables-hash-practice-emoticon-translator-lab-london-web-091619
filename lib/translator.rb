@@ -14,6 +14,7 @@ end
 def get_japanese_emoticon(file_path, emoticon)
   emoji_library = load_library(file_path)
   emoji_equivalent = emoji_library["get_emoticon"][emoticon]
+  return ""
   emoji_equivalent
 end
 
