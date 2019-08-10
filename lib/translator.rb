@@ -1,7 +1,7 @@
 require "yaml"
 
 def load_library(file_path)
-  emojis = YAML.load_file(file_path)
+  emoji_sheet = YAML.load_file(file_path)
   # japanese_emoticons = []
   # western_emoticons = []
   # emoji_meanings = []
@@ -10,6 +10,7 @@ def load_library(file_path)
   #   japanese_emoticons << value.last
   #   emoji_meanings << key
   # end
+  emoji_sheet.each_with_object({}) do |emoji_info, ruby each with 
   hash = {"get_emoticon" => {}, "get_meaning" => {}}
 end
 
