@@ -2,7 +2,7 @@ require "yaml"
 
 def load_library(file_path)
   emojis = YAML.load_file(file_path)
-  emojis
+  p emojis
 end
 
 def get_japanese_emoticon
